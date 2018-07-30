@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+.model {
+    width: 7.5rem;
+    padding: 0.3rem 0;
+    text-align: center;
+}
+
+#person_show {
+	
+}
+
+#person_show_body {
+    padding: 0 0.2rem;
+}
+
+.model_body_flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.model_head_first {
+    font-size: 0.3rem;
+    font-weight: normal;
+}
+
+.underline {
+    border-bottom: 0.03rem solid #5cb85c;
+}
+
+.model_head_second {
+    font-size: 0.25rem;
+    margin: 0.2rem 0 0.5rem;
+}
+
+.every_person {
+    width: 3.4rem;
+    height: 6.7rem;
+    margin-bottom: 0.2rem;
+    border: 0.02rem solid #5cb85c;
+
+}
+
+.person_img {
+     width: 4rem;
+    height: 4rem;
+}
+
+.person_name_alp {
+    font-size: 0.25rem;
+    margin: 0.15rem 0 0.1rem;
+}
+
+.person_name_char {
+    font-size: 0.25rem;
+    margin-bottom: 0.1rem;
+}
+
+.kmore_small {
+    display: block;
+    width: 1.3rem;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    color: #fff;
+    font-size: 0.15rem;
+    border-radius: 0.2rem;
+    background-color: #5cb85c;
+    margin: 0.2rem auto 0;
+}
+
+.seemore_large {
+    display: block;
+    width: 2rem;
+    height: 0.5rem;
+    margin: 0.2rem auto 0;
+    line-height: 0.5rem;
+    font-size: 0.25rem;
+    border: 0.02rem solid #ccc;
+    border-radius: 0.25rem;
+    color: #000;
+}

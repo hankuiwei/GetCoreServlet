@@ -1,0 +1,57 @@
+
+
+* {
+    box-sizing: border-box;
+    color: #333;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body{
+  background-color: #f6f6f6;
+  position: relative;
+}
+
+h1, h2, h3, h4, h5, h6, body {
+    margin: 0;
+}
+
+ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+dl, dd {
+    margin: 0;
+    list-style: none;
+}
+
+img {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+s, i {
+    text-decoration: none;
+    font-style: normal;
+}
+
+button{
+    border: none;
+}
+
+.clearfix {
+    clear: both;
+}
+
+input,select,option{
+    background: none;
+    border: none;
+}

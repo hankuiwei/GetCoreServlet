@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hpedu.core.publicTest.dao.TestMapper">
+	<resultMap id="BaseResultMap" type="com.hpedu.core.publicTest.pojo.Test" >
+		<id column="id" property="id" jdbcType="VARCHAR" />		
+		<result column="testPointId" property="testPointId" jdbcType="VARCHAR" />
+		<result column="createTime" property="createTime" jdbcType="TIMESTAMP" />
+		<result column="testTitle" property="testTitle" jdbcType="VARCHAR" />
+		<result column="score" property="score" jdbcType="BIGINT" />
+		<result column="testAnswer" property="testAnswer" jdbcType="VARCHAR" />
+		<result column="testDetail" property="testDetail" jdbcType="VARCHAR" />
+		<result column="testType" property="testType" jdbcType="BIGINT" />
+		<result column="isMoreChoose" property="isMoreChoose" jdbcType="BIGINT" />
+		<association property="testPoint" javaType="com.hpedu.core.publicTest.pojo.TestPoint" >
+			<id column="tpid"  property="id" jdbcType="VARCHAR"/>
+			<result column="grade" property="grade"  jdbcType="VARCHAR"/>
+			<result column="pointName" property="pointName"  jdbcType="VARCHAR"/>
+		</association>
+		<collection  property="testOptionList" ofType="com.hpedu.core.publicTest.pojo.TestOption" javaType="java.util.ArrayList">
+			<id column="optionId" property="id" jdbcType="VARCHAR" />		
+			<result column="testId" property="testId" jdbcType="VARCHAR" />
+			<result column="option" property="option" jdbcType="VARCHAR" />
+			<result column="optionContent" property="optionContent" jdbcType="VARCHAR" />
+		</collection>
+		
+		<!-- <collection property="testOptionList" column="id" 
+			select="com.hpedu.core.publicTest.dao.TestOptionMapper.selectOptionByTestId">
+		</collection> -->
+		
+	</resultMap>
+	
+	
+	
+	<!-- 获取随机考试题 -->
+	<select id="getRandomTestByGrade" parameterType="String" resultMap="BaseResultMap">
+	<!-- 关联的选项,并没有按照假象的顺序就进行排序,未知 -->
+		select a.*,top.*,tp1.* from (
+			select testoo.id id,testoo.testPointId,testoo.createTime,testoo.testTitle,testoo.score,testoo.testAnswer,testoo.testDetail,
+					testoo.testType,testoo.isMoreChoose
+					<!-- ,top.id optionId,top.option ,top.optionContent -->
+					<!-- ,testoo.tpid,testoo.grade,testoo.pointName -->
+			from 
+				(select
+					testo.id,testo.testPointId,testo.createTime,testo.testTitle,testo.score,testo.testAnswer,testo.testDetail,testo.testType,testo.isMoreChoose
+						<!-- ,tp.tpid,tp.grade,tp.pointName -->
+				 from
+					(select t.id,t.testPointId,t.createTime,t.testTitle,t.score,t.testAnswer,t.testDetail,
+						t.testType,t.isMoreChoose
+					from 
+						test t
+					where 
+						testPointId in ( SELECT tpid from testPoint where grade = #{grade} ) and testType="0" 
+					group by 
+						t.testPointId 
+					order by 
+						rand() limit 6
+					) testo
+				
+				) testoo
+				
+		UNION ALL 
+			select * from
+				(select testo1.id id,testo1.testPointId,testo1.createTime,testo1.testTitle,testo1.score,testo1.testAnswer,testo1.testDetail,
+						testo1.testType,testo1.isMoreChoose
+						<!-- ,top1.id optionId,top1.option,top1.optionContent -->
+						<!-- ,tp1.tpid,tp1.grade,tp1.pointName -->
+				from
+					(select t1.id id,t1.testPointId,t1.createTime,t1.testTitle,t1.score,t1.testAnswer,t1.testDetail,
+						t1.testType,t1.isMoreChoose
+						
+					from 
+						test t1
+					where 
+						testPointId in ( SELECT tpid from testpoint where grade =  #{grade}  ) and testType="1" 
+					group by 
+						testPointId 
+					order by 
+						rand() limit 4) testo1
+				
+				) y 
+		 ) a
+		 left join 
+				testPoint tp1 on a.testPointId = tp1.tpid	
+		 left join 
+				testOption top on a.id = top.testId
+		
+		 order by top.option ASC 
+		
+	<!--	order by x.id ASC ,x.testType ASC  -->
+	</select>
+	
+	
+</mapper>

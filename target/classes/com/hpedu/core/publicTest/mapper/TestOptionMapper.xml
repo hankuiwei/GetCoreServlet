@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hpedu.core.publicTest.dao.TestOptionMapper">
+	<resultMap id="BaseResultMap" type="com.hpedu.core.publicTest.pojo.TestOption">
+		<id column="id" property="id" jdbcType="VARCHAR" />		
+		<result column="testId" property="testId" jdbcType="VARCHAR" />
+		<result column="option" property="option" jdbcType="VARCHAR" />
+		<result column="optionContent" property="optionContent" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<select id="selectOptionByTestId" parameterType="String" resultMap="BaseResultMap">
+	
+		select * from testOption where testId = #{testId}
+	</select>
+	
+</mapper>

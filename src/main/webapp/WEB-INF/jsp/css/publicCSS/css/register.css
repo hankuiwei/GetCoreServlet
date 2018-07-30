@@ -1,0 +1,68 @@
+body{
+    height: 13rem;
+    background: url("/GetCoreServlet/image/back.jpg") no-repeat  ;
+    background-size: 100% 100% ;
+}
+#register_form{
+    width: 4.8rem;
+    height: 8rem;
+    background: rgba(255, 255, 255, 0.38);
+    text-align: center;
+    font-size: 0.4rem;
+    padding: 0.3rem 1rem;
+    position: absolute;
+    top: 2rem;
+    left: 0.35rem;
+    color: #fff;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+form>div{
+    margin: 0.3rem 0 0.1rem;
+}
+input{
+    box-sizing: border-box;
+    width: 100%;
+    height: 0.6rem;
+    padding-left: 0.2rem;
+    border: 0.01rem solid rgba(92, 184, 92, 0.6);
+    border-radius: 0.04rem;
+    font-size: 0.2rem;
+}
+.register_yz{
+    display: flex;
+}
+.register_yz input{
+    width: 3rem;
+}
+.btn_yz{
+    margin-left: 0.2rem;
+    height: 0.6rem ;
+    background-color: #5cb85c;
+    border: 1px solid rgba(92, 184, 92, 0.6);
+    border-radius: 0.04rem;
+    color: #fff;
+}
+.register_yz select{
+    height: 0.55rem;
+    font-size: 0.2rem;
+}
+.other_sit{
+    display: flex;
+    justify-content: flex-end;
+
+}
+.other_sit a{
+    font-size: 0.25rem;
+}
+.btn_register{
+    width: 100%;
+    height: 0.6rem ;
+    background-color: #5cb85c;
+    border: 1px solid rgba(92, 184, 92, 0.6);
+    border-radius: 0.04rem;
+    color: #fff;
+}

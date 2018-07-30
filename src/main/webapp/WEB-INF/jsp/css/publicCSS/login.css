@@ -1,0 +1,183 @@
+.body{
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+}
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+
+.loginContent {
+    width: 9.70rem;
+    margin: 0.5rem 0.54rem 0.37rem;
+    border-bottom: 1px solid #F0F1F5;
+    background: #FFF;
+    box-shadow: 0 0 20px 0 #ccc;;
+}
+
+.loginContent .loginHeader {
+    display: flex;
+    justify-content: space-around;
+    line-height: 1rem;
+}
+
+.loginContent .loginTitle {
+    font-size: 0.38rem;
+    color: #000;
+
+}
+
+.loginContent .loginTab {
+    font-size: 0.3rem;
+    color: #000;
+}
+
+.loginContent .loginTab a {
+    color: #56CAFF;
+}
+
+.loginContent .loginMain,.loginContent .regMain {
+    height: 14.36rem;
+    padding-top: 4.1rem;
+}
+
+.loginContent .loginMain form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginContent .loginMain p{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.loginContent .loginMain p:nth-child(2) {
+    padding: 0.9rem 0 0.5rem;
+}
+
+.loginContent .loginMain span {
+    display: block;
+    width: 2.23rem;
+    line-height: 0.82rem;
+    padding-right: 0.54rem;
+    text-align: right;
+    font-size: 0.36rem;
+}
+.loginContent .regMain span{
+    font-size: 0.36rem;
+}
+
+.loginContent .loginMain input {
+    line-height: 26px;
+    font-size: 0.36rem;
+    border: 1px solid #AAA7A7;
+    width: 72%;
+    padding-left: 0.2rem;
+
+}
+
+.loginContent .loginMain .loginBtnBox {
+    align-self: flex-end;
+    width: 5.57rem;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 1rem;
+
+}
+
+.loginContent .loginMain .loginBtnBox .reg, .loginContent .loginMain .loginBtnBox .forget {
+    font-size: 0.36rem;
+}
+
+.loginContent .loginMain .submit,.loginContent .regMain .submit {
+    margin-top: 4.05rem;
+    width: 4.12rem;
+    height: 1.01rem;
+    background: #56CAFF;
+    border-radius: 0.09rem;
+    color: #fff;
+    font-size: 0.53rem;
+}
+.loginContent .regMain form{
+       display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.loginContent .regMain input{
+    width: 5.57rem;
+    border: 1px solid #AAA7A7;
+}
+
+.loginContent .regMain p{
+    width: 100%;
+    margin: 0;
+    margin-bottom:0.38rem ;
+    display: flex;
+}
+
+.loginContent .regMain p.verify input{
+    width: 2.36rem;
+    line-height: 0.76rem;
+    padding: 0;
+}
+
+.loginContent .regMain p span{
+    display: block;
+    width: 3.23rem;
+    text-align: right;
+    font-size: 0.36rem;
+    padding-right: 0.54rem;
+    line-height: 0.78rem;
+}
+
+.loginContent .regMain label{
+    margin-right: 0.56rem;
+    font-size: 0.29rem;
+}
+
+.loginContent .regMain p .radio{
+    width: 0.28rem;
+    height: 0.28rem;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: 1px solid #C0BEBE;
+    margin-right: 0.2rem;
+
+}
+
+.loginContent .regMain p .radio:checked {
+    width: 0.28rem;
+    height: 0.28rem;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url("./img/radio.png")  no-repeat center/100%;
+
+}
+
+.loginContent .regMain p .btn{
+    width: 1.82rem;
+    height: 0.78rem;
+    font-size: 0.3rem;
+    color: #fff;
+    background: #56CAFF;
+    margin-left: 0.16rem;
+    border-radius: 0.03rem;
+}
+
+.loginContent .regMain p.regRadio{
+    display: flex;
+    justify-content: center;
+}
+
+.loginContent .regMain .submit{
+    margin: 1.8rem 0 1.08rem;
+}

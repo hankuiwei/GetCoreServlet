@@ -1,0 +1,62 @@
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+#person_info{
+    width: 7.1rem;
+    padding: 0.3rem 0.2rem;
+}
+.person_info_first{
+    width: 100%;
+    display: flex;
+    margin-left: 3rem;
+}
+.person_img{
+    flex: 1;
+    height: 3rem;
+}
+.person_img img{
+    width: 100%;
+    height: 100%;
+}
+.personal_info{
+    box-sizing: border-box;
+    flex: 2;
+    height:3rem;
+    padding: 0.4rem 0.2rem 0.2rem;
+    font-size: 0.2rem;
+    line-height: 0.5rem;
+    margin-left:3rem;
+}
+.personal_info p:first-child{
+	padding-left:2rem;
+	width:638px;
+	border-bottom: 0.3rem dashed #ccc;
+}
+.personal_info p:last-child{
+	padding-left:2rem;
+	font-size:3rem;
+}
+
+.info_header{
+    font-size: 0.3rem;
+    color: #309bee;
+    margin: 0.2rem;
+}
+.intrduce{
+    font-size:0.25rem;
+    background-color: #f7f7f7;
+    line-height: 0.4rem;
+    text-indent: 2em;
+    margin-left: 1rem;
+}
+.intrduce{
+    padding: 0.1rem;
+}
+.char_red{
+    color: red;
+}
+
+
+/*结尾*/

@@ -1,0 +1,383 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #F3F3F3;
+}
+
+p {
+    margin: 0;
+}
+
+.title {
+    height: 1.42rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title h1 {
+    font-size: 0.24rem;
+}
+
+.title h2 {
+    font-size: 0.2rem;
+    position: relative;
+}
+
+.title h2::after {
+    content: '';
+    display: block;
+    width: 0.83rem;
+    height: 0.03rem;
+    background-color: #0BA323;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: -0.1rem;
+}
+
+.more {
+    height: 1.16rem;
+    font-size: 0.18rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.more a {
+    display: block;
+    width: 1.8rem;
+    height: 0.5rem;
+    line-height: 0.5rem;
+    text-align: center;
+    border-radius: 0.14rem;
+    border: 1px solid #ABABAB;
+    position: relative;
+    padding-left: 0.38rem;
+}
+
+.more a::before {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 0.22rem;
+    height: 0.18rem;
+    background: url("/GetCoreServlet/image/bread.jpg") no-repeat center/100%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 0.25rem;
+}
+
+#banner {
+    margin-bottom: 0.2rem;
+    height: 2.88rem;
+    background-color: #0ad7f1;
+    border-bottom: 1px solid #DCDCDC;
+    overflow: hidden;
+}
+
+#banner img {
+    width: 100%;
+}
+
+#newClass {
+    height: 10.88rem;
+    background-color: #fff;
+    border-bottom: 1px solid #DCDCDC;
+    margin-bottom: 0.2rem;
+}
+
+#newClass .classContent {
+    margin: 0 0.2rem;
+    height: 8.32rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+#newClass .classItem {
+    width: 3.30rem;
+    height: 4.06rem;
+}
+
+#newClass .classItem a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#newClass .four {
+    background: url("/GetCoreServlet/image/yellow.png") no-repeat center/100%;
+}
+
+#newClass .five {
+    background: url("/GetCoreServlet/image/green.png") no-repeat center/100%;
+}
+
+#newClass .classItem .text {
+    padding-top: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#newClass .classItem span {
+    font-size: 0.28rem;
+    color: #3789C6;
+    line-height: 0.6rem;
+}
+
+#teacher {
+    height: 7.2rem;
+    background-color: #fff;
+    border-bottom: 1px solid #DCDCDC;
+    margin-bottom: 0.2rem;
+}
+
+#teacher .teacherContent {
+    height: 4.6rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+#teacher .teacherItem {
+    width: 2.16rem;
+    border: 1px solid #5CA657;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+#teacher .teacherItem .english {
+    font-variant: small-caps;
+}
+
+#teacher .teacherItem span {
+    font-size: 0.14rem;
+}
+
+#teacher .teacherItem a {
+    display: block;
+    width: 1.3rem;
+    height: 0.4rem;
+    font-size: 0.12rem;
+    line-height: 0.4rem;
+    border-radius: 0.12rem;
+    background-color: #5AB95A;
+    border: 1px solid #5CA657;
+    margin: 0.1rem 0;
+}
+
+#teacher .teacherItem img {
+    width: 100%;
+}
+
+#openCourse {
+    background-color: #fff;
+}
+
+#openCourse .courseContent {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#openCourse .courseItem {
+    width: 50%;
+    height: 4.44rem;
+}
+
+#openCourse .courseItem a {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+#openCourse .img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#openCourse img {
+    width: 100%;
+    position: relative;
+}
+
+#openCourse .course {
+    width: 2.6rem;
+    position: absolute;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#openCourse .course .main {
+    padding-top: 0.36rem;
+}
+
+#openCourse .course .main img {
+    width: 2rem;
+    border-bottom: 0.05rem dashed #B5DAFD;
+}
+
+#openCourse .courseBody {
+    height: 1.34rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#openCourse .courseBody p {
+    font-size: 0.12rem;
+}
+
+#openCourse .courseBody .title {
+    color: #609DCC;
+
+}
+
+#openCourse .courseBody .price {
+    color: #E25B58;
+}
+
+#openCourse .courseBody .time, #openCourse .courseBody .data {
+    color: #C5DEE3;
+}
+
+#openCourse .courseLabel {
+    background: #6FDBFC;
+    text-align: center;
+    border-radius: 0 0 0.1rem 0.1rem;
+    position: absolute;
+    padding: 0.02rem;
+    top: 0.7rem;
+    left: 0.67rem;
+    font-size: 0.12rem;
+    color: #fff;
+    transform: scale(0.70);
+    transform-origin:0 0;
+
+    -ms-transform: scale(0.70);         /* IE 9 */
+    -ms-transform-origin:0 0;       /* IE 9 */
+
+    -webkit-transform: scale(0.70); /* Safari 和 Chrome */
+    -webkit-transform-origin:0 0;   /* Safari 和 Chrome */
+
+    -moz-transform: scale(0.70);        /* Firefox */
+    -moz-transform-origin:0 0;      /* Firefox */
+
+    -o-transform: scale(0.70);      /* Opera */
+    -o-transform-origin:0 0;        /* Opera */
+}
+
+#openCourse .courseLabel .people {
+    color: #E14981;
+    font-size: 0.12rem;
+
+}
+
+#openCourse .courseText {
+    width: 3.52rem;
+    height: 2rem;
+    margin-right: 0.22rem;
+    padding-top: 0.12rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#openCourse .courseText .hading {
+    width: 3.18rem;
+    font-size: 0.28rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#openCourse .courseText .twohading {
+    height: 0.4rem;
+    display: flex;
+}
+
+#openCourse .courseText .courseName, #openCourse .courseText .coursePeople {
+    font-size: 0.24rem;
+}
+
+#openCourse .courseText .courseName {
+    margin-right: 0.22rem;
+}
+
+#openCourse .courseText .coursePeople::before {
+    content: '';
+    display: inline-block;
+    width: 0.2rem;
+    height: 0.2rem;
+    background: url("/GetCoreServlet/image/peo_16.jpg") no-repeat center/100%;
+}
+
+#openCourse .courseText .courseName {
+    display: inline-block;
+    font-size: 0.24rem;
+    width: 2.12rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#openCourse .courseText .playBack {
+    font-size: 0.24rem;
+    color: #9A9A9A;
+
+}
+
+#openCourse .courseText .active {
+    font-size: 0.24rem;
+    color: #E07315;
+    margin-right: 0.26rem;
+}
+
+#openCourse .courseText .courseTextPrice {
+    display: flex;
+}
+
+#openCourse .courseText .oldtitle {
+    font-size: 0.24rem;
+}
+
+#openCourse .courseText .oldprice {
+    font-size: 0.24rem;
+    text-decoration: line-through;
+}
+
+/*
+#openCourse .courseText .hading {
+    width: 3.18rem;
+    font-size: 0.28rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#openCourse .courseText .twohading{
+    height: 0.24rem;
+}
+
+#openCourse .courseText .courseName {
+    display: inline-block;
+    font-size: 0.24rem;
+    width: 2.12rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}*/
+
+

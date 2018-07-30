@@ -1,0 +1,100 @@
+.model{
+    width: 7.5rem;
+    padding: 0.3rem 0;
+    text-align: center;
+}
+.model_body_flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.model_head_first{
+    font-size: 0.3rem;
+    font-weight: normal;
+}
+.model_head_second{
+    font-size:0.25rem;
+    margin: 0.2rem 0 0.5rem;
+}
+.underline{
+    border-bottom: 0.03rem solid rgb(29, 178, 50);
+}
+#normalLesson_body{
+    background-color: #eee;
+    padding: 0.3rem 0.27rem;
+}
+#competeLesson_body{
+    background-color: #eee;
+    padding: 0.3rem 0.27rem;
+}
+.model_body_flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.every_lesson{
+    width: 3.4rem;
+    height: 4.7rem ;
+    margin-bottom: 0.2rem;
+    background-color: #fff;
+    position: relative;
+}
+.lesson_header{
+    width: 100%;
+    height: 1.5rem;
+    font-size: 0.3rem;
+    line-height: 1rem;
+    color:#fff;
+    background-color: rgb(29, 178, 50);
+}
+.lesson_info{
+    position: absolute;
+    padding: 0.15rem 0;
+    width: 2.8rem;
+    height: 3rem;
+    top: 1rem;
+    left: 0.3rem;
+    background-color: #fff;
+}
+.houpu{
+    font-size: 0.2rem;
+    color:rgb(29, 178, 50);
+}
+.lesson_style{
+    font-size: 0.3rem;
+    margin-top: 0.4rem;
+    color: #000;
+    font-weight: 600;
+}
+.lesson_teacher{
+    font-size: 0.25rem;
+    margin-top: 0.15rem;
+    color: #666;
+}
+.lesson_price{
+    font-size: 0.2rem;
+    margin-top: 0.4rem;
+    color: #000;
+    font-weight: 600;
+}
+.rmb{
+    color: red;
+    font-weight: normal;
+    font-size: 0.15rem;
+}
+.lesson_students{
+    font-size: 0.15rem;
+    margin-top: 0.2rem;
+    color:#666;
+}
+.seemore_large{
+    display:block;
+    width: 2rem;
+    height: 0.5rem;
+    margin: 0.2rem auto 0;
+    line-height:0.5rem;
+    font-size: 0.25rem;
+    border: 0.02rem solid #ccc;
+    border-radius:0.25rem;
+    color: #000;
+}

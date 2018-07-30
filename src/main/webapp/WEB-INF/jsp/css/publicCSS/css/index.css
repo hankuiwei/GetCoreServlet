@@ -1,0 +1,375 @@
+#header {
+    width:100%;
+    background:#fff;
+    position:fixed;
+    left:0;
+    top:0;
+    z-index:10;
+}
+.header {
+    width:100%;
+    height:1.17rem;
+    max-width:750px;
+    margin:0 auto;
+    padding:0 0.27rem;
+}
+.logo{
+    float:left;
+    height:0.938rem;
+    line-height: 1;
+    margin-top:0.117rem;
+}
+.logo img {
+    height:100%;
+}
+.searchbox {
+    float:right;
+    width:60%;
+    height:100%;
+    position:relative;
+}
+.search {
+    width:100%;
+    height:0.587rem;
+    margin-top:0.29rem;
+    border:1px solid #ccc;
+    -webkit-border-radius: 0.29rem;
+    -moz-border-radius: 0.29rem;
+    border-radius: 0.29rem;
+    outline:none;
+    padding-left:0.48rem;
+    padding-right:0.64rem;
+    font-size:0.28rem;
+}
+.search_icon {
+    position:absolute;
+    top:50%;
+    margin-top:-0.14rem;
+    right:0.24rem;
+}
+
+.menubox {
+    height:1.17rem;
+    background:#fff;
+    width:100%;
+    max-width:750px;
+    line-height:1.17rem;
+    margin:1px auto 0;
+    overflow:hidden;
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+}
+.menu {
+    float:left;
+    width:18%;
+    text-align:center;
+    font-size:0.32rem;
+    background: #eee;
+}
+.menu:last-of-type{
+    width:28%;
+}
+.active a{
+    color:#4d975a;
+}
+.login,.register{
+    color:#919191;
+}
+.zhezhao{
+    width:100%;
+    height:calc(100vh - 1.17rem * 2);
+    position:absolute;
+    left:0;
+    top:2.34rem;
+    background:rgba(0,0,0,0.8);
+    display:none;
+    z-index:10;
+}
+.coursebox{
+    width:100%;
+    height:calc(100vh - 1.17rem * 2 - 60px);
+    background:#fff;
+    overflow:hidden;
+}
+.course{
+    height:100%;
+}
+.course_l {
+    float:left;
+    width:35%;
+    height:100%;
+    overflow:auto;
+}
+.course_l nav,.course_r ul li{
+    height:0.88rem;
+    line-height:0.88rem;
+    padding-left:0.27rem;
+    padding-right:0.27rem;
+    border-bottom:1px solid #ddd;
+}
+.course_l nav:last-of-type{
+    border-bottom:0;
+}
+.course_l nav.nav_active{
+    color: #ff6600;
+    background-color: #fafafa;
+}
+.course_r {
+    float:left;
+    width:65%;
+    height:100%;
+    background:#fafafa;
+    overflow:auto;
+}
+.course_r ul li:last-of-type{
+    border-bottom:0;
+}
+.course_r ul li.course_active{
+    background-color: #e6e6e6;
+}
+.course_r ul li.course_active .course_val_active{
+    color:#ff6600;
+}
+.course_key{
+    float:left;
+    color:#000;
+    width:5em;
+}
+.course_val{
+    float:left;
+    color:#212121;
+}
+.course_r ul{
+    display:none;
+}
+.content{
+    padding-top:2.34rem;
+    height:100vh;
+    overflow:auto;
+}
+.bannerImgbox,#bannerImgbox2 {
+    position:relative;
+}
+.bannerImg {
+    overflow:hidden;
+}
+.bannerImg .bd,.bannerImg .bd ul,.bannerImg .bd li,.bannerImg .bd img {
+    width:100%;
+}
+
+/*名师推荐*/
+ .teachbox .info {
+     text-align:left;
+     padding:0 0.27rem ;
+ }
+.name_english {
+    font-size:0.3rem;
+    line-height:1.2;
+}
+.name2{
+    line-height:1;
+}
+.teach_course {
+    font-size:0.25rem;
+    font-weight:bold;
+}
+.prompt{
+    font-size:0.25rem;
+}
+.prompt {
+    text-align:left;
+    color:#b9b9b9;
+}
+.c_red{
+    color:#e53333;
+}
+.hd {
+    position:absolute;
+    left:50%;
+    bottom:0.2rem;
+    z-index:1;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+.teachbox .hd{
+    top:2.15rem;
+}
+.hd li {
+    float:left;
+    width:8px;
+    height:8px;
+    background-color: #ccc;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    margin-left:3px;
+}
+.hd li.on{
+    background-color: #999;
+}
+/*学员，课程等*/
+.model{
+    width: 7.5rem;
+    padding: 0.3rem 0;
+    text-align: center;
+}
+.model_body_flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.model_head_first{
+    font-size: 0.3rem;
+    font-weight: normal;
+}
+.underline{
+    border-bottom: 0.03rem solid rgb(29, 178, 50)
+;;
+}
+.model_head_second{
+    font-size:0.25rem;
+    margin: 0.2rem 0 0.5rem;
+}
+.every_student{
+    width: 3.4rem;
+    height: 4.7rem ;
+    margin-bottom: 0.2rem;
+    border: 0.02rem solid rgb(29, 178, 50)
+;;
+}
+.student_img{
+    display: block;
+    width: 100%;
+    height:3rem;
+}
+.student_img img{
+    width: 100%;
+    height:100%;
+}
+.student_name_alp{
+    font-size: 0.25rem;
+    margin: 0.15rem 0 0.1rem;
+}
+.student_name_char{
+    font-size: 0.25rem;
+    margin-bottom: 0.1rem;
+}
+.kmore_small{
+    display:block;
+    width: 1.3rem;
+    height:0.4rem;
+    line-height: 0.4rem;
+    color: #fff;
+    font-size: 0.15rem;
+    border-radius: 0.2rem;
+    background-color: rgb(29, 178, 50)
+;;
+    margin: 0.2rem auto 0;
+}
+
+.seemore_large{
+    display:block;
+    width: 2rem;
+    height: 0.5rem;
+    margin: 0.2rem auto 0;
+    line-height:0.5rem;
+    font-size: 0.25rem;
+    border: 0.02rem solid #ccc;
+    border-radius:0.25rem;
+    color: #000;
+}
+
+/*课程*/
+#normalLesson_body{
+    background-color: #eee;
+    padding: 0.3rem 0;
+}
+.every_lesson{
+    width: 3.4rem;
+    height: 4.7rem ;
+    margin-bottom: 0.2rem;
+    background-color: #fff;
+    position: relative;
+    /*border: 0.02rem solid rgb(29, 178, 50)
+;;*/
+}
+.lesson_header{
+    width: 100%;
+    height: 1.5rem;
+    font-size: 0.3rem;
+    line-height: 1rem;
+    color:#fff;
+    background-color: rgb(29, 178, 50)
+;;
+}
+.lesson_info{
+    position: absolute;
+    padding: 0.15rem 0;
+    width: 2.8rem;
+    height: 3rem;
+    top: 1rem;
+    left: 0.3rem;
+    background-color: #fff;
+}
+.houpu{
+    font-size: 0.2rem;
+    color:rgb(29, 178, 50)
+;;
+}
+.lesson_style{
+    font-size: 0.3rem;
+    margin-top: 0.4rem;
+    color: #000;
+    font-weight: 600;
+}
+.lesson_teacher{
+    font-size: 0.25rem;
+    margin-top: 0.15rem;
+    color: #666;
+}
+.lesson_price{
+    font-size: 0.2rem;
+    margin-top: 0.4rem;
+    color: #000;
+    font-weight: 600;
+}
+.rmb{
+    color: red;
+    font-weight: normal;
+    font-size: 0.15rem;
+}
+.lesson_students{
+    font-size: 0.15rem;
+    margin-top: 0.2rem;
+    color:#666;
+}
+
+#competeLesson_body{
+    background-color: #eee;
+    padding: 0.3rem 0;
+}
+
+#houpu_footer{
+    width: 7.5rem;
+    height: 1.3rem;
+    padding: 0.2rem 0;
+    background-color: #31363c;
+    text-align: center;
+}
+#footer_navbar{
+    width: 7.5rem;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0.2rem;
+}
+.footer_nav{
+    font-size: 0.25rem;
+    color: #ccc;
+}
+#footer_footer{
+    font-size: 0.2rem;
+    color: #787d82;
+}

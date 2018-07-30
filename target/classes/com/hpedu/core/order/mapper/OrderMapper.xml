@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hpedu.core.order.dao.OrderMapper">
+	<resultMap id="BaseResultMap" type="com.hpedu.core.order.pojo.Order">
+		<id column="oid" property="oid" jdbcType="VARCHAR" />		
+		<result column="omoney" property="omoney" jdbcType="VARCHAR" />
+		<result column="ocreatTime" property="ocreatTime" jdbcType="TIMESTAMP" />
+		<result column="opayTime" property="opayTime" jdbcType="TIMESTAMP" />
+		<result column="oisPay" property="oisPay" jdbcType="VARCHAR" />
+		<result column="orderNo" property="orderNo" jdbcType="VARCHAR" />
+		<result column="uid" property="uid" jdbcType="VARCHAR" />
+		<result column="vid" property="vid" jdbcType="VARCHAR" />
+		<result column="vclassify" property="vclassify" jdbcType="VARCHAR" />
+		<result column="payStyle" property="payStyle" jdbcType="VARCHAR" />
+		<result column="isKill" property="isKill" jdbcType="INTEGER" />
+		
+		
+		<result column="userName" property="userName" jdbcType="VARCHAR" />
+		<result column="gname" property="gname" jdbcType="VARCHAR" />
+		<result column="cname" property="cname" jdbcType="VARCHAR" />
+		<result column="isUsed" property="isUsed" jdbcType="INTEGER" />
+	</resultMap>
+	
+	<resultMap id="BannerResultMap" type="com.hpedu.core.order.pojo.Banner">
+		<id column="bid" property="bid" jdbcType="VARCHAR" />		
+		<result column="title" property="title" jdbcType="VARCHAR" />
+		<result column="content" property="content" jdbcType="VARCHAR" />
+		<result column="imgUrl" property="imgUrl" jdbcType="VARCHAR" />
+		<result column="sort" property="sort" jdbcType="VARCHAR" />
+		<result column="article" property="article" jdbcType="VARCHAR" />
+		
+		<!-- add -->
+		<result column="category" property="category" jdbcType="VARCHAR" />
+		<result column="subject" property="subject" jdbcType="VARCHAR" />
+		<result column="grade" property="grade" jdbcType="VARCHAR" />
+		<result column="classify" property="classify" jdbcType="VARCHAR" />
+		<result column="belong" property="belong" jdbcType="INTEGER" />
+		
+	</resultMap>
+	
+	
+	<!-- 获取公众号轮播图 -->
+    <select id="getPublicBanner" resultMap="BannerResultMap">
+    	select * from banner where belong=1 
+    </select>
+	
+	<select id="findBannerByBid" parameterType="String" resultMap="BannerResultMap">
+	 select * from banner where bid=#{bid}
+	</select>
+	<select id="selectAllBanner" resultMap="BannerResultMap">
+	  select * from banner order by sort
+	</select>
+	<!-- 订单查看(分页) -->
+	<!-- <select id="findOrderListByPage" parameterType="java.util.Map" resultMap="BaseResultMap">
+		 select g.*,u.userName,gv.gname,cv.cname from orders g left join user u on g.uid=u.uid left join generalvideo gv on g.vid=gv.gid left join contestvideo cv on g.vid=cv.cid where 1=1 order by g.ocreatTime desc
+	</select> 
+	<select id="findOrderListCount" parameterType="java.util.Map" resultType="java.lang.Integer">
+	 select  count(*) from orders g where 1=1
+	</select>
+	-->
+	<select id="findAllOrderByUserId" parameterType="String" resultMap="BaseResultMap">
+	   <![CDATA[ select g.*,gv.gname,cv.cname, now()<DATE_SUB(opayTime, INTERVAL -1 YEAR)  as isUsed from orders g left join generalvideo gv on g.vid=gv.gid left join contestvideo cv on g.vid=cv.cid where g.uid=#{uid} and g.oisPay=1 order by g.opayTime desc]]>
+	</select> 
+	<select id="findOrderListByPage" parameterType="int" resultMap="BaseResultMap">
+	 <![CDATA[	select g.*,u.userName,gv.gname,cv.cname,now()<DATE_SUB(opayTime, INTERVAL -1 YEAR)  as isUsed from orders g left join user u on g.uid=u.uid left join generalvideo gv on g.vid=gv.gid left join contestvideo cv on g.vid=cv.cid order by g.opayTime desc,g.ocreatTime desc limit #{0},#{1}]]>
+	</select> 
+	<select id="findOrderListCount"  resultType="java.lang.Integer">
+	    select  count(1) from orders
+	</select>
+	<select id="getMaxOrderNoByOrderNoPre" parameterType="String" resultType="java.lang.String">
+	   select orderNo from orders where orderNo like CONCAT(#{0},'%') order by orderNo desc limit 1
+	</select>
+	<select id="getIsBuyVideoByVid" parameterType="String" resultType="java.lang.Integer">
+	  <![CDATA[  select count(1) from orders where vid=#{0} and vclassify=#{1} and uid=#{2} and oisPay=1 and  now()<DATE_SUB(opayTime, INTERVAL -1 YEAR) ]]>
+	</select>
+	<select id="findOrderByOid" parameterType="String"  resultMap="BaseResultMap" >
+	   select * from orders where oid=#{0}
+	</select>
+	
+	<select id="findOrderByParams" parameterType="String"  resultMap="BaseResultMap" >
+	   select * from orders where uid=#{0} and vid=#{1} and vclassify=#{2} and oisPay=#{3}
+	</select>
+	<select id="findOrderByOrderNo" parameterType="String"  resultMap="BaseResultMap" >
+	   select * from orders where orderNo=#{0}
+	</select>
+	
+	<insert id="insertOrder" parameterType="com.hpedu.core.order.pojo.Order">
+	   insert into orders(oid,omoney,ocreatTime,oisPay,orderNo,uid,vid,vclassify,payStyle<if test="isKill!=null">,isKill</if>)values(#{oid},#{omoney},#{ocreatTime},0,#{orderNo},#{uid},#{vid},#{vclassify},#{payStyle}<if test="isKill!=null">,#{isKill}</if>)
+	</insert>
+	<update id="updateOrderPayStatus" parameterType="String">
+	  update orders set oisPay=1,opayTime=now() where orderNo=#{0}
+	</update>
+	<update id="updateOrderPayMoney" parameterType="String">
+	  update orders set omoney=#{1},orderNo=#{2},payStyle=#{3} where oid=#{0} 
+	</update>
+	
+</mapper>
